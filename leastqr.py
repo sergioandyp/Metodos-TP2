@@ -1,3 +1,4 @@
+import matplotlib as mpl
 import numpy as np
 
 import pandas as pd
@@ -90,7 +91,7 @@ def sonido():
 
     y = A @ x   # Solucion ajustada
 
-    e = abs(b - y) # Error
+    e = b - y # Error
 
     return y, e
 
@@ -103,12 +104,14 @@ if (__name__ == "__main__"):
     # y, e = sonido()
 
     # df  = pd.read_csv('sound.txt', header=None, names=['ti','yi'], dtype={'ti':np.float64,'yi':np.float64}, sep=' ')
+    # mpl.rcParams['font.size'] = 16
 
     # plt.plot(df['ti'], df['yi'], 'o', label='Original')
     # plt.plot(df['ti'], y, label='Ajustada')
     # # plt.plot(e, label='error')
-    # plt.xlabel('tiempo')
-    # plt.ylabel('y')
+    # plt.xlabel('$tiempo$', fontsize=28)
+    # plt.ylabel('$y$', fontsize=28)
+    # plt.xlim(0, 0.01)
     # plt.legend()
     # plt.grid()
     # plt.show()
